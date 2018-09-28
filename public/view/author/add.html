@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md mx-auto align-self-center">
+            <div class="card shadow my-3 p-3">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Author</h5>
+                    <hr class="my-4">
+                    <form class="my-3">
+                        <div class="form-group">
+                            <label for="firstname">Firstname</label>
+                            <input type="text" class="form-control" id="firstname" ng-model="author.name.first"
+                                placeholder="Firstname">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Lastname</label>
+                            <input type="text" class="form-control" id="lastname" ng-model="author.name.last"
+                                placeholder="Lastname">
+                        </div>
+                        <div class="form-group">
+                            <label for="bio">Bio</label>
+                            <textarea class="form-control" id="bio" ng-model="author.bio" placeholder="Bio"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mt-5" ng-click="addAuthor()">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md mx-auto my-5 align-self-center">
+            Authors can be added using the following form. If needed you can get the source code and change it as the
+            way you want.
+        </div>
+    </div>
+</div>

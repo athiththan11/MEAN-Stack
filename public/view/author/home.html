@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-md">
+                <a class="btn btn-success" href="/authors/add">Add Author</a>
+            </div>
+            <div class="col-md">
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row bg-light">
+    <div class="container p-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">Authors</div>
+            <table class="table p-3 shadow rounded bg-white">
+                <thead>
+                    <th>#</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Bio</th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="author in authors track by $index | limitTo: 5">
+                        <td>{{$index + 1}}</td>
+                        <td>{{author.name.first}}</td>
+                        <td>{{author.name.last}}</td>
+                        <td>{{author.bio}}</td>
+                        <td><a class="btn btn-sm btn-warning" href="/authors/edit/{{author._id}}">
+                                Edit
+                            </a>
+                        </td>
+                        <td><button type="button" class="btn btn-sm btn-danger" ng-click="deleteAuthor(author._id)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
