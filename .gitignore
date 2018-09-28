@@ -1,0 +1,10 @@
+# gitignore
+
+# node modules
+node_modules/
+
+# bower
+bower_components/
+
+# env
+.env
