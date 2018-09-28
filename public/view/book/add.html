@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md mx-auto align-self-center">
+            <div class="card shadow my-3 p-3">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Book</h5>
+                    <hr class="my-4">
+                    <form class="my-3">
+
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" ng-model="book.name" placeholder="Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <input type="text" class="form-control" id="description" ng-model="book.description"
+                                placeholder="Description">
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input type="number" min="0" step="0.01" class="form-control" id="price" ng-model="book.price"
+                                placeholder="Price">
+                        </div>
+                        <div class="form-group">
+                            <label for="publishdate">Publish Date</label>
+                            <input type="date" class="form-control" id="publishdate" ng-model="book.publish.date"
+                                placeholder="Publish Date">
+                        </div>
+                        <div class="form-group">
+                            <label for="publishby">Published By</label>
+                            <input type="text" class="form-control" id="publishby" ng-model="book.publish.by"
+                                placeholder="Published By">
+                        </div>
+                        <div class="form-group">
+                            <label for="author">Author</label>
+                            <select id="author" class="form-control" ng-model="book.author">
+                                <option ng-repeat="author in authors" value="{{author._id}}">{{author.name.first}}
+                                    {{author.name.last}}</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block mt-5" ng-click="addBook()">Submit</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md mx-auto my-5 align-self-center">
+            Books can be added using the following form. For the tutorial purpose, only one author can be selected from
+            the given dropdown list. If needed you can get the source code and change it as the way you want.
+        </div>
+    </div>
+</div>

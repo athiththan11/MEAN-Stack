@@ -1,0 +1,111 @@
+<div class="row">
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-md">
+                <a class="btn btn-success" href="/books/add">Add Book</a>
+            </div>
+            <div class="col-md">
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row bg-light">
+    <div class="container p-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">Books</div>
+            <table class="table p-3 shadow rounded bg-white">
+                <thead>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th>Published Date</th>
+                    <th>Published By</th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat-start="book in books track by $index | limitTo: 5" ng-init="book.expanded = false;">
+                        <td>{{$index + 1}}</td>
+                        <td>{{book.name}}</td>
+                        <td>{{book.description}}</td>
+                        <td>{{book.authors[0].name.first}} {{book.authors[0].name.last}}</td>
+                        <td>{{book.price}}</td>
+                        <td>{{book.publish.date | date:'dd-MM-yyyy'}}</td>
+                        <td>{{book.publish.by}}</td>
+                        <td><button type="button" class="btn btn-sm btn-warning" ng-click="book.expanded = !book.expanded">
+                                <span ng-if="!book.expanded">Edit</span>
+                                <span ng-if="book.expanded">Close</span>
+                            </button>
+                        </td>
+                        <td><button type="button" class="btn btn-sm btn-danger" ng-click="deleteBook(book._id)">Delete</button></td>
+                    </tr>
+
+                    <tr ng-show="book.expanded" ng-repeat-end>
+                        <td colspan="9">
+                            <div class="container-fluid">
+                                <form style="padding-top: 20px; padding-bottom: 20px;">
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" id="name" ng-model="book.name"
+                                            placeholder="Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Description</label>
+                                        <input type="text" class="form-control" id="description" ng-model="book.description"
+                                            placeholder="Description">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price">Price</label>
+                                        <input type="number" min="0" step="0.01" class="form-control" id="price"
+                                            ng-model="book.price" placeholder="Price">
+                                    </div>
+                                    <!-- <div class="form-group">
+                                        <label for="publishdate">Publish Date</label>
+                                        <input type="date" class="form-control" id="publishdate" ng-model="book.publish.date" placeholder="Publish Date">
+                                    </div> -->
+                                    <div class="form-group">
+                                        <label for="publishby">Published By</label>
+                                        <input type="text" class="form-control" id="publishby" ng-model="book.publish.by"
+                                            placeholder="Published By">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="author">Author</label>
+                                        <select id="author" class="form-control" ng-model="book.author">
+                                            <option ng-repeat="author in authors" value="{{author._id}}">{{author.name.first}}
+                                                {{author.name.last}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-default" ng-click="addBook()">Submit</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-md">
+                <p class="text-justify">
+                    The above table presents all the books stored in mongoDB. The <cite>edit</cite> button appends an
+                    edit form with the table row to edit the details of the books. Also, you can find the edit button
+                    which programmed to navigate to another page with the edit form in Authors section.
+                    The <cite>delete</cite> button deletes a book permenantly from the database. The <b>ObjectID</b> of
+                    the book is used to query and delete from the database. All given data tables are limited to 5 rows
+                    of data. You can change it by deleting the following code segment from applied ng-repeats.
+                </p>
+                <p class="lead text-center">
+                    <b>&lt; | limitTo: 5 &gt;</b>
+                </p>
+            </div>
+            <div class="col-md"></div>
+        </div>
+    </div>
+</div>
