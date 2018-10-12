@@ -6,12 +6,10 @@
                     <h5 class="card-title text-center">Book</h5>
                     <hr class="my-4">
                     <form class="my-3">
-
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" id="name" ng-model="book.name" placeholder="Name">
                         </div>
-
                         <div class="form-group">
                             <label for="description">Description</label>
                             <input type="text" class="form-control" id="description" ng-model="book.description"
@@ -39,16 +37,19 @@
                                     {{author.name.last}}</option>
                             </select>
                         </div>
-
                         <button type="submit" class="btn btn-primary btn-block mt-5" ng-click="addBook()">Submit</button>
-
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col-md mx-auto my-5 align-self-center">
-            Books can be added using the following form. For the tutorial purpose, only one author can be selected from
-            the given dropdown list. If needed you can get the source code and change it as the way you want.
+        <div class="col-md mx-auto my-5 p-5 align-self-center">
+            <p class="lead">
+                Books can be added using the following form.
+            </p>
+            <p class="text-justify">
+                For the tutorial purpose, only one author can be selected
+                from the given dropdown list. If needed you can get the source code and change it as the way you want.
+            </p>
         </div>
     </div>
 </div>

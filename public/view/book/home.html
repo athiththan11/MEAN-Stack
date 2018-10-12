@@ -92,20 +92,27 @@
 <div class="row">
     <div class="container p-5">
         <div class="row">
-            <div class="col-md">
-                <p class="text-justify">
-                    The above table presents all the books stored in mongoDB. The <cite>edit</cite> button appends an
-                    edit form with the table row to edit the details of the books. Also, you can find the edit button
-                    which programmed to navigate to another page with the edit form in Authors section.
-                    The <cite>delete</cite> button deletes a book permenantly from the database. The <b>ObjectID</b> of
-                    the book is used to query and delete from the database. All given data tables are limited to 5 rows
-                    of data. You can change it by deleting the following code segment from applied ng-repeats.
-                </p>
+            <div class="col-md p-5 align-self-center">
                 <p class="lead text-center">
-                    <b>&lt; | limitTo: 5 &gt;</b>
+                    Click on the <b>Add Book</b> button to add a new book to the application.
                 </p>
             </div>
-            <div class="col-md"></div>
+            <div class="col-md p-5 align-self-center">
+                <p class="text-justify">
+                    The above table presents all the books stored in our presented mLab (MongoDb). The <b><code>edit</code></b>
+                    button appends an edit form with the table row to edit the details of the books. Also, you can find
+                    the edit button with navigation to another page in Author's section. <br /><br />
+                    The <b><code>delete</code></b> button deletes a book permenantly from the database.
+                    The <b>ObjectID</b>
+                    of the book is used to query and delete from the database. <br /><br />
+
+                    <i>All given data tables are limited to 5 rows. You can change it by deleting the following code
+                        segment from applied ng-repeats.</i>
+                </p>
+                <p class="lead text-center">
+                    &lt; | limitTo: 5 &gt;
+                </p>
+            </div>
         </div>
     </div>
 </div>
